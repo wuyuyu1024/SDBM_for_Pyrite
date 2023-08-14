@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.colors as colors
 
-import seaborn as sns
-import os
 
 # fixed tf seed
 import tensorflow as tf
