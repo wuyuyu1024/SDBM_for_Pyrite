@@ -1,18 +1,23 @@
-# Interpreting Pyrite Genesis With Decision Maps
+# SDBM for Pyrite
 
-This repository contains the reproducibility workflow for the manuscript **"Interpreting Mineral Genesis Classification with Decision Maps: A Case Study Using Pyrite Trace Elements"**.
+Research software for reproducing the decision-map workflow from the following geoscience machine-learning paper:
 
-The project applies supervised decision maps to pyrite trace-element data so that mineral-genesis classification can be inspected both as a predictive task and as an interpretable geoscience workflow. It is intended as research software: the code, data-processing steps, model search, visual analysis, and result tables are kept together so that the manuscript figures and classification results can be regenerated from the notebook.
+| Field | Details |
+| --- | --- |
+| Paper | [Interpreting mineral deposit genesis classification with decision maps: A case study using pyrite trace elements](https://pubs.geoscienceworld.org/msa/ammin/article-abstract/109/12/2116/637125/Interpreting-mineral-deposit-genesis?redirectedFrom=fulltext) |
+| Journal | *American Mineralogist*, 109(12), 2116-2129, 2024 |
+| DOI | [10.2138/am-2023-9254](https://doi.org/10.2138/am-2023-9254) |
 
-## Research Context
+This repository implements a reproducible workflow that applies supervised decision maps to pyrite trace-element data. The goal is to inspect mineral-deposit genesis classification both as a predictive modeling task and as an interpretable geoscience workflow. The code, data-processing steps, model search, visual analysis, and result tables are kept together so that the paper's figures and classification results can be regenerated from the notebook.
 
-Pyrite trace-element chemistry is commonly used to study ore-forming processes and mineral genesis. This workflow explores how decision maps can support that analysis by combining:
+## What the Workflow Does
 
-- supervised dimensionality reduction with SSNP;
-- classifier comparison with cross-validation;
-- decision-boundary visualization in a 2D embedding;
-- inverse mapping from the decision-map space back to trace-element features;
-- reproducible notebook-based figures and tables for manuscript results.
+- Loads and preprocesses pyrite trace-element data.
+- Trains an SSNP-based supervised projection and inverse projection.
+- Compares classifiers with stratified cross-validation.
+- Builds decision maps for mineral-genesis classification.
+- Maps locations in the 2D decision space back to trace-element feature estimates.
+- Generates confusion matrices, feature maps, and paper-style summary tables.
 
 The work is relevant to geoscience-facing machine learning, interpretable classification, visual analytics, and environmental or Earth-science research software.
 
@@ -55,11 +60,30 @@ The notebook performs the full workflow:
 
 The current notebook output selects an `SVC(probability=True)` model in the classifier search and reports approximately 0.91 held-out classification accuracy in the displayed classification report.
 
+## Citation
+
+If you use this workflow, please cite:
+
+> Wang, Y., Qiu, K., Telea, A., Hou, Z., Zhou, T., Cai, Y., Ding, Z., Yu, H., & Deng, J. (2024). Interpreting mineral deposit genesis classification with decision maps: A case study using pyrite trace elements. *American Mineralogist*, 109(12), 2116-2129. https://doi.org/10.2138/am-2023-9254
+
+```bibtex
+@article{wang2024pyriteDecisionMaps,
+  title = {Interpreting mineral deposit genesis classification with decision maps: A case study using pyrite trace elements},
+  author = {Wang, Yu and Qiu, Kunfeng and Telea, Alexandru and Hou, Zengqian and Zhou, Tao and Cai, Yujun and Ding, Zhenju and Yu, Huayong and Deng, Jun},
+  journal = {American Mineralogist},
+  volume = {109},
+  number = {12},
+  pages = {2116--2129},
+  year = {2024},
+  doi = {10.2138/am-2023-9254}
+}
+```
+
 ## Notes For Reuse
 
 - Run the notebook from the repository root so relative paths to `data/` resolve correctly.
 - The notebook fixes random seeds in the TensorFlow/SSNP workflow where applicable, but exact results may still vary across TensorFlow, CUDA, and platform versions.
-- The code is currently organized around reproducing the manuscript workflow rather than as a packaged Python library.
+- The code is currently organized around reproducing the paper workflow rather than as a packaged Python library.
 - If you adapt the workflow for another geochemical dataset, update the preprocessing section and class labels in `workflow.ipynb` before regenerating the decision maps.
 
 ## License
