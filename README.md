@@ -10,6 +10,14 @@ Research software for reproducing the decision-map workflow from the following g
 
 This repository implements a reproducible workflow that applies supervised decision maps to pyrite trace-element data. The goal is to inspect mineral-deposit genesis classification both as a predictive modeling task and as an interpretable geoscience workflow. The code, data-processing steps, model search, visual analysis, and result tables are kept together so that the paper's figures and classification results can be regenerated from the notebook.
 
+<p align="center">
+  <img
+    src="assets/decision-map-workflow.png"
+    alt="Confusion matrices comparing the classifier and supervised decision-map workflow."
+    width="760"
+  />
+</p>
+
 ## What the Workflow Does
 
 - Loads and preprocesses pyrite trace-element data.
@@ -27,6 +35,7 @@ The work is relevant to geoscience-facing machine learning, interpretable classi
 - `dm_utils.py`: decision-map helper classes for classifier evaluation, probability-map rendering, and inverse-feature visualization.
 - `ssnp2.py`: SSNP implementation adapted from the upstream SSNP research code.
 - `requirements.txt`: tested Python package versions.
+- `assets/decision-map-workflow.png`: representative notebook output used in this README.
 - `data/PyTE.csv`: pyrite trace-element dataset used by the workflow.
 - `data/zzg2.xlsx`: additional data used by the notebook's custom-data plotting section.
 
@@ -62,7 +71,7 @@ The current notebook output selects an `SVC(probability=True)` model in the clas
 
 ## Citation
 
-If you use this workflow, please cite:
+GitHub can read the repository citation metadata from [`CITATION.cff`](CITATION.cff). If you use this workflow, please cite:
 
 > Wang, Y., Qiu, K., Telea, A., Hou, Z., Zhou, T., Cai, Y., Ding, Z., Yu, H., & Deng, J. (2024). Interpreting mineral deposit genesis classification with decision maps: A case study using pyrite trace elements. *American Mineralogist*, 109(12), 2116-2129. https://doi.org/10.2138/am-2023-9254
 

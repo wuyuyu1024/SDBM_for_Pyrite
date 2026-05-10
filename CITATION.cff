@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this workflow, please cite the associated American Mineralogist paper."
+title: "SDBM for Pyrite: Decision-map workflow for pyrite trace-element classification"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Yu
+repository-code: "https://github.com/wuyuyu1024/SDBM_for_Pyrite"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "Interpreting mineral deposit genesis classification with decision maps: A case study using pyrite trace elements"
+  authors:
+    - family-names: Wang
+      given-names: Yu
+    - family-names: Qiu
+      given-names: Kunfeng
+    - family-names: Telea
+      given-names: Alexandru
+    - family-names: Hou
+      given-names: Zengqian
+    - family-names: Zhou
+      given-names: Tao
+    - family-names: Cai
+      given-names: Yujun
+    - family-names: Ding
+      given-names: Zhenju
+    - family-names: Yu
+      given-names: Huayong
+    - family-names: Deng
+      given-names: Jun
+  journal: "American Mineralogist"
+  volume: 109
+  issue: 12
+  start: 2116
+  end: 2129
+  year: 2024
+  doi: "10.2138/am-2023-9254"
